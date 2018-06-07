@@ -1,0 +1,146 @@
+% adopted from
+% https://raw.githubusercontent.com/xdanaux/moderncv/master/examples/template.tex
+% thanks: Xavier Danaux (xdanaux@gmail.com).
+% author: Yixuan Chen (xlk@umich.edu)
+
+
+\documentclass[11pt,letterpaper,sans]{moderncv}
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{black}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Yixuan}{Chen}
+\title{curriculum vitae}                             % optional, remove / comment the line if not wanted
+% \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(734)~789~0357}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{xlk@umich.edu}                              % optional, remove / comment the line if not wanted
+\homepage{blog.xlk.me}                         % optional, remove / comment the line if not wanted
+\social[github]{LukeXuan}                              % optional, remove / comment the line if not wanted
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+\begin{document}
+\makecvtitle
+
+\section{Education}
+\cventry{2017--2019}{Bachelor}{Computer Science Engineering}{University of
+  Michigan}{\textit{4.0}}{Dual Degree Program}
+\cventry{2015--2019}{Bachelor}{Electrical and Computer Engineering}{Shanghai
+  Jiaotong University}{\textit{3.6}}{}
+\cventry{2012--2015}{High School}{}{Shanghai High School}{}{}
+
+% \section{Master thesis}
+% \cvitem{title}{\emph{Title}}
+% \cvitem{supervisors}{Supervisors}
+% \cvitem{description}{Short thesis abstract}
+
+\section{Research Interests}
+\cvitem{}{Formal Verification, programming languages, operating systems and
+  applying formal methods in large and concurrent software systems}
+\section{Research}
+\cventry{May. -- Aug. 2018}{Research intern}{prof. Andrew Appel}{Princeton
+  University}{}{Designing and Verifying high performance KV-database implemented
+  in C
+  \begin{itemize}
+  \item Using Verified Software Toolchain and Verifiable C to prove
+    the functional correctness of C programs
+  \item Cooperating with colleagues to design a high performance KV-database in
+    light of MassTree and SQLite cursor
+  \end{itemize}}
+\cventry{2017--2018}{Research assistant}{prof. Manos Kapritsos}{University of
+  Michigan}{}{Verification tool on concurrent programs
+  \begin{itemize}
+  \item Understanding and modifying the Dafny language and program verifier
+  \item Researching automatic derivation of abstract syntax tree mappings to
+    help establishing transformation correctness between programs
+  \end{itemize}}
+\section{Academic Experience}
+\subsection{Services}
+\cventry{2018 Fall}{Teaching Assistant}{EECS 482 Operating Systems}{University
+  of Michigan}{}{}
+\cventry{2016-2017}{Student Adviser}{Advising Center of Joint Institute}{Shanghai Jiaotong
+  University}{}{}
+\subsection{Events}
+\cventry{2018 Jul.}{Student participant}{DSSS 2018}{Princeton}{NJ}{DeepSpec
+  Summer School 2018}
+\cventry{2018 Jan.}{Student participant}{POPL 2018}{Los Angeles}{CA}{
+  Principles of Programming Languages 2018}
+\section{Industrial Experience}
+\cventry{2016--2017}{Intern}{Apple Inc.}{Shanghai}{}{
+  Designed monitoring and automation systems for the hardware test team
+  \begin{itemize}
+  \item Developed concurrent software systems
+  \item Cooperated with my team and reconciled the demands
+  \end{itemize}}
+\section{Projects}
+% 591 paxos, 591 research, 483 compiler, JOS operating system(osdev)
+\cventry{2018 Winter}{Course project}{Fault-tolerant distributed chat server}{EECS 591}{}{
+  Implemented chat server with replication that tolerates benign failures and
+  unreliable channels
+  \begin{itemize}
+  \item Understood \textbf{Paxos} and \textbf{multi-Paxos} algorithms and
+    implemented in Python
+  \item Dealt with non-deterministic bugs introduced by unreliable channels
+  \end{itemize}
+}
+\cventry{2018 Winter}{Course research project}{On investigating mixer’s impact on
+  database performance}{EECS 591}{}{
+  Identifying application-aware mixer's impact on the performance of database
+  \begin{itemize}
+  \item Benchmarked the database performance with TPC-W datasets
+  \item Reasoned about the database performance in terms of network,
+    concurrency, database and application logic 
+  \end{itemize}
+}
+\cventry{2018 Winter}{Course project}{Compiler for COOL}{EECS 483}{}{
+  Implemented a compiler for COOL programming language, written in OCaml and
+  compiles COOL program into x86\_64 assembly program
+  \begin{itemize}
+  \item Implemented a full-stack from lexical analyzing to code generation
+  \item Used intermediate language to achieve extensibility
+  \item Generated assembly file that can be assembled into ELF file and
+    directly executable on Linux
+  \end{itemize}
+}
+\cventry{2018 Winter}{Course project}{Network file system}{EECS 482}{}{
+  Implemented a file system featuring encryption, authentication, failure
+  tolerance and concurrency
+  \begin{itemize}
+  \item Designed fine-grained locking scheme for best concurrency performance
+  \item Used shadowing to tolerate the failure during modification to the disk
+  \end{itemize}
+}
+\cventry{2017}{Individual project}{JOS}{MIT 6.828}{}{
+  Followed MIT 6.828's labs, finished and implemented the JOS operating
+  system
+  \begin{itemize}
+  \item Developed operating system on x86 platform, featuring multi-core,
+    paging, system calls and ELF compatibility
+  \item Used GDB and QEMU to debug the operating system
+  \end{itemize}
+}
+\section{Languages}
+\cvitem{English}{Proficient, TOEFL: 106}
+\cvitem{Chinese}{Native speaker}
+
+\section{Programming Languages}
+\cvitem{Functional}{OCaml, Coq}
+\cvitem{Imperative}{C, C++, C\#, Pascal}
+\cvitem{Scripting}{Python, Javascript, Shell (and variants)}
+\cvitem{Others}{Dafny, LaTeX, HTML/CSS, Verilog, Matlab, Mathematica}
+% \section{Interests}
+% \cvitem{Guitar}{Novice}
+
+\end{document}
+
+%% end of file `template.tex'.
